@@ -1,0 +1,8 @@
+{
+  "name": "VisionGuide AI",
+  "description": "A voice-first accessibility assistant for visually impaired users to locate objects in indoor environments using real-time spatial audio guidance.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
