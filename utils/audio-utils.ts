@@ -41,8 +41,8 @@ export function createBlobFromAudioData(data: Float32Array): { data: string; mim
   const l = data.length;
   const int16 = new Int16Array(l);
   for (let i = 0; i < l; i++) {
-    // Basic clipping to prevent distortion
-    int16[i] = Math.max(-1, Math.min(1, data[i])) * 32767;
+    // Exact PCM 16-bit multiplier as per spec
+    int16[i] = data[i] * 32768;
   }
   return {
     data: encode(new Uint8Array(int16.buffer)),
